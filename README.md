@@ -4,4 +4,7 @@
 
 ## Javascript
 
+- 변수
+  - [변수](https://github.com/junjangsee/TIL/blob/master/javascript/변수.md)
+
 ## React

@@ -4,6 +4,8 @@
 
 ## HTML
 
+- [규격](https://github.com/junjangsee/TIL/blob/master/html/규격.md)
+  - \<!DOCTYPE html>
 - [제목과 문단](https://github.com/junjangsee/TIL/blob/master/html/제목과문단.md)
   - \<hn>
     - \<h1>
@@ -52,8 +54,14 @@
   - \<audio>
   - \<video>
   - \<iframe>
+- [데이터](https://github.com/junjangsee/TIL/blob/master/html/데이터.md)
+  - \<title>
+  - \<link>
+  - \<style>
+  - \<script>
+  - \<meta>
 
-## Javascript
+## JavaScript
 
 - [변수](https://github.com/junjangsee/TIL/blob/master/javascript/변수.md)
 - [객체](https://github.com/junjangsee/TIL/blob/master/javascript/객체.md)

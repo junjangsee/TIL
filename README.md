@@ -60,6 +60,14 @@
   - \<style>
   - \<script>
   - \<meta>
+- [섹션](https://github.com/junjangsee/TIL/blob/master/html/섹션.md)
+  - \<header>
+  - \<nav>
+  - \<main>
+  - \<section>
+  - \<article>
+  - \<aside>
+  - \<footer>
 
 ## JavaScript
 

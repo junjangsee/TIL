@@ -69,6 +69,22 @@
   - \<aside>
   - \<footer>
 
+## CSS
+
+- [선택자](https://github.com/junjangsee/TIL/blob/master/css/선택자.md)
+  - Type Selector(요소 선택자)
+  - Class Selector(클래스 선택자)
+  - Id Selecotor(아이디 선택자)
+  - Child Combinator(자식 선택자)
+  - Descendant Combinator(자손 선택자)
+  - Sibling Combinators(형제 선택자)
+  - first-child
+  - last-child
+  - nth-child(n)
+  - hover
+  - active
+  - focus
+
 ## JavaScript
 
 - [변수](https://github.com/junjangsee/TIL/blob/master/javascript/변수.md)

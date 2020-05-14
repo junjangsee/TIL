@@ -101,6 +101,7 @@
   - Pseudo-element
     - ::before
     - ::after
+  - Flex
 - [위치](https://github.com/junjangsee/TIL/blob/master/css/위치.md)
   - static
   - relative

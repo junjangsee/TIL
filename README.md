@@ -95,7 +95,7 @@
     - Block
     - Inline
     - Inline-Block
-- [가로배치](https://github.com/junjangsee/TIL/blob/master/css/가로배치.md)
+- [정렬](https://github.com/junjangsee/TIL/blob/master/css/정렬.md)
   - overflow: hidden;
   - Clear
   - Pseudo-element

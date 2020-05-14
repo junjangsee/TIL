@@ -122,6 +122,9 @@
   - text-transform
   - text-decoration
   - font-style
+- [폰트](https://github.com/junjangsee/TIL/blob/master/css/폰트.md)
+  - link
+  - @font-face
 
 ## JavaScript
 

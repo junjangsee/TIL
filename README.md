@@ -110,6 +110,18 @@
   - z-index
 - [반응형](https://github.com/junjangsee/TIL/blob/master/css/반응형.md)
   - @media
+- [텍스트](https://github.com/junjangsee/TIL/blob/master/css/텍스트.md)
+  - font-size
+  - line-height
+  - letter-spacing
+  - font-family
+  - font-weight
+  - color
+  - text-align
+  - text-indent
+  - text-transform
+  - text-decoration
+  - font-style
 
 ## JavaScript
 

@@ -125,6 +125,12 @@
 - [폰트](https://github.com/junjangsee/TIL/blob/master/css/폰트.md)
   - link
   - @font-face
+- [배경](https://github.com/junjangsee/TIL/blob/master/css/배경.md)
+  - background-color
+  - background-image
+  - background-repeat
+  - background-size
+  - background-position
 
 ## JavaScript
 

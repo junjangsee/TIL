@@ -131,6 +131,9 @@
   - background-repeat
   - background-size
   - background-position
+- [애니메이션](https://github.com/junjangsee/TIL/blob/master/css/애니메이션.md)
+  - transition
+  - animation
 
 ## JavaScript
 

@@ -95,3 +95,89 @@ export default Counter;
 number는 `현재의 상태값`이고, setNumber는 `상태값을 바꿔준다`고 했었죠?<br/>
 그러면 증가 함수에서는 number를 1 증가시키고 감소 함수는 number를 1 감소 시켜야하니 setNumber를 통해 현재의 number를 증감 시켜준다면 상태 값이 바뀌게 될 것입니다.<br/>
 그리고 현재 값을 h1태그에 나타내주게 되면 변화되는 상태를 보여주게 됩니다.
+
+## Input 상태관리
+
+useState를 input에서 사용하게 되었을 때 주의할 점이 있습니다. 바로 `value` 에 관한 것인데요 코드를 보겠습니다.
+
+```js
+import React, { useState } from "react";
+
+function InputSample() {
+  const [text, setText] = useState("");
+  const onChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const onReset = () => {
+    setText("");
+  };
+
+  return (
+    <div>
+      <input onChange={onChange} value={text} />
+      <button onClick={onReset}>초기화</button>
+      <div>
+        <b>값:</b>
+        {text}
+      </div>
+    </div>
+  );
+}
+
+export default InputSample;
+```
+
+input에 값을 입력하고 초기화를 클릭하면 빈 텍스트로 만드는 코드입니다.<br/>
+여기서 input에 `value가 없으면` **초기화가 안되므로** value를 꼭 `상태변화의 현재값`을 넣어주어야 합니다.
+
+### input이 여러개일 때
+
+input이 여러개일 뿐만 아니라 객체를 상태관리 할 때 중요한 부분이며 `불변성을 유지`하는데 아주 중요한 개념입니다.
+
+```js
+import React, { useState } from "react";
+
+function InputSample() {
+  const [inputs, setInputs] = useState({
+    name: "",
+    nickname: "",
+  });
+  const { name, nickname } = inputs;
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+
+    setInputs({ ...inputs, [name]: value });
+  };
+
+  const onReset = () => {
+    setInputs({
+      name: "",
+      nickname: "",
+    });
+  };
+
+  return (
+    <div>
+      <input name="name" placeholder="이름" onChange={onChange} value={name} />
+      <input
+        name="nickname"
+        placeholder="닉네임"
+        onChange={onChange}
+        value={nickname}
+      />
+      <button onClick={onReset}>초기화</button>
+      <div>
+        <b>값:</b>
+        {name} ({nickname})
+      </div>
+    </div>
+  );
+}
+
+export default InputSample;
+```
+
+먼저 최초 상태값을 객체로 선언하였습니다. 이 두가지에 해당되는 input이 두개 있고 이 두개의 이벤트에는 객체를 **...inputs로 복사**한 후 input name별로 value를 업데이트 하고 있으며,<br/>
+초기화의 경우 공백으로 다시 변경합니다.<br/>

@@ -1,6 +1,6 @@
 # props
 
-properties의 줄임말이며 컴포넌트를 사용할 때 특정 값을 전달해주고 싶을 때 사용하는 것입니다.
+properties의 줄임말이며 컴포넌트를 사용할 때 `특정 값을 전달`해주고 싶을 때 사용하는 것입니다.
 
 ## props 전달하기
 
@@ -85,7 +85,7 @@ function App() {
 export default App;
 ```
 
-Wrapper라는 컴포넌트가 Hello 컴포넌트를 자식으로 가지고 있습니다. 이 자식들을 표현하기 위해서는 children props를 통해 가져올 수 있습니다.
+Wrapper라는 컴포넌트가 Hello 컴포넌트를 자식으로 가지고 있습니다. 이 자식들을 표현하기 위해서는 `children` props를 통해 가져올 수 있습니다.
 
 ```js
 import React from "react";

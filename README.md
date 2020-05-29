@@ -165,4 +165,5 @@
   - [useState](https://github.com/junjangsee/TIL/blob/master/react/useState.md)
   - [useRef](https://github.com/junjangsee/TIL/blob/master/react/useRef.md)
   - [useEffect](https://github.com/junjangsee/TIL/blob/master/react/useEffect.md)
+  - [useMemo](https://github.com/junjangsee/TIL/blob/master/react/useMemo.md)
 - [map](https://github.com/junjangsee/TIL/blob/master/react/map.md)

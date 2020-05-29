@@ -167,4 +167,5 @@
   - [useEffect](https://github.com/junjangsee/TIL/blob/master/react/useEffect.md)
   - [useMemo](https://github.com/junjangsee/TIL/blob/master/react/useMemo.md)
   - [useCallback](https://github.com/junjangsee/TIL/blob/master/react/useCallback.md)
+  - [useReducer](https://github.com/junjangsee/TIL/blob/master/react/useReducer.md)
 - [map](https://github.com/junjangsee/TIL/blob/master/react/map.md)

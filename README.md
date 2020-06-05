@@ -170,3 +170,4 @@
   - [useReducer](https://github.com/junjangsee/TIL/blob/master/react/useReducer.md)
 - [map](https://github.com/junjangsee/TIL/blob/master/react/map.md)
 - [Context API](https://github.com/junjangsee/TIL/blob/master/react/contextAPI.md)
+- [lifeCycle](https://github.com/junjangsee/TIL/blob/master/react/lifeCycle.md)

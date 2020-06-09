@@ -23,11 +23,12 @@ class Queue {
 
   // Queue에 해당되는 두 개의 기능을 만듭니다.
 
-  // 큐에 데이터를 넣는 기능을 만듭니다.
+  // 큐에 데이터를 넣는 기능
   enqueue(data) {
     this._arr.push(data); // 생성된 배열에 데이터를 넣습니다.
   }
 
+  // 큐의 데이터를 뺴는 기능
   dequeue() {
     this._arr.shift(); // 배열의 마지막 데이터를 제거합니다.
   }

@@ -44,7 +44,7 @@ class Stack {
 
   // 스택의 마지막 데이터 알아내는 기능
   peek() {
-    return this._arr[this._arr.length - 1];
+    return this._arr[this._arr.length - 1]; // 배열 총 길이 중 -1을 하여 마지막 인덱스를 가져와 해당 값을 알아냅니다.
   }
 }
 ```

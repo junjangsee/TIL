@@ -178,5 +178,6 @@
 
 ## Data Structure
 
-- [Queue](https://github.com/junjangsee/TIL/blob/master/dataStructure/queue.md)
-- [Stack](https://github.com/junjangsee/TIL/blob/master/dataStructure/stack.md)
+- [Queue](https://github.com/junjangsee/TIL/blob/master/data-structure/queue.md)
+- [Stack](https://github.com/junjangsee/TIL/blob/master/data-structure/stack.md)
+- [LinkedList](https://github.com/junjangsee/TIL/blob/master/data-structure/linkedList.md)

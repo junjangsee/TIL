@@ -11,10 +11,9 @@
 
 ## 기능
 
-- addTail : 맨 마지막에 노드를 추가하는 기능
-- addHead : 맨 처음에 노드를 추가하는 기능
-- removeTail : 맨 마지막에 노드를 삭제하는 기능
-- removeHead : 맨 처음에 노드를 삭제하는 기능
+- append : 맨 마지막에 노드를 추가하는 기능
+- preappend : 맨 처음에 노드를 추가하는 기능
+- delete : 특정 노드를 삭제하는 기능
 - desc : 전체 노드의 값을 출력하는 기능
 - contains : 노드 중 값이 있는지 확인하는 기능
 
@@ -51,8 +50,45 @@ class LinkedList {
     this.tail = null;
   }
 
-  addTail(data) {
-    let node = new Node(data); // 새로운 데이터를 추가 할 때 새로운 노드 객체를 생성
+  append(data) {
+    const node = new Node(data); // 새로운 데이터를 추가 할 때 새로운 노드 객체를 생성
+
+    // 첫 노드가 없을 때 생성한 노드를 head, tail에 위치
+    if (!this.head || !this.tail) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      // 노드가 있다면 기존에 있는 노드가 새로 추가된 다음 주소를 가리키도록 하고, 끝에는 새롭게 추가된 노드를 삽입
+      this.tail.next = node;
+      this.tail = node;
+    }
+  }
+
+  preappend(data) {
+    const node = new Node(data);
+
+    // 첫 노드가 없을 때 첫 노드에 생성
+    if (!this.head || !this.tail) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      node.next = this.head; // 기존 head 노드는 새로운 노드의 다음이 됨
+      this.head = node; // 새로운 노드는 첫 번째가 됨
+    }
+  }
+
+  delete(data) {
+    let currentNode = this.head; // 첫 노드로 초기화
+
+    // 첫 노드 부터 순회하며 해당 값이 있는 노드가 있는지 확인
+    while (currentNode) {
+      // 다음 노드의 값과 같다면
+      if (currentNode?.next?.data === data) {
+        currentNode.next = currentNode.next.next; // 다음 노드를 다다음 노드로 삽입
+      } else {
+        currentNode = currentNode.next; // 다음 노드를 현재 노드로 바꾸어줌
+      }
+    }
   }
 }
 ```

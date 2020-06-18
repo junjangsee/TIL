@@ -380,3 +380,105 @@ export default App;
 
 프로필 목록을 추가해주고 목록을 보여주어야 할 컴포넌트를 Route에 선언합니다.<br/>
 서브라우트는 페이지 내에 탭을 다룰 때 주로 사용합니다.
+
+## history 객체
+
+라우트로 사용되는 컴포넌트에게 props로 전달되며 컴포넌트에서 라우트에 직접적으로 접근이 가능합니다.
+
+### HistorySample.js
+
+```js
+import React, { useEffect } from "react";
+
+function HistorySample({ history }) {
+  const goBack = () => {
+    history.goBack();
+  };
+  const goHome = () => {
+    history.push("/");
+  };
+
+  useEffect(() => {
+    console.log(history);
+    const unblock = history.block("정말 떠나실건가요?");
+    return () => {
+      unblock();
+    };
+  }, [history]);
+
+  return (
+    <div>
+      <button onClick={goBack}>뒤로가기</button>
+      <button onClick={goHome}>홈으로</button>
+    </div>
+  );
+}
+
+export default HistorySample;
+```
+
+Route 컴포넌트에 history 객체를 가져와 goBack, push, block, location, go 등의 함수를 사용할 수 있습니다.
+
+## withRouter
+
+라우터 컴포넌트가 아닌 곳에서 match, location, history를 사용할 수 있게 해줍니다.
+
+### WithRouterSample.js
+
+```js
+import React from "react";
+import { withRouter } from "react-router-dom";
+
+function WithRouterSample({ location, match, history }) {
+  return (
+    <div>
+      <h4>location</h4>
+      <textarea value={JSON.stringify(location, null, 2)}></textarea>
+      <h4>match</h4>
+      <textarea value={JSON.stringify(match, null, 2)}></textarea>
+      <button onClick={() => history.push("/")}>홈으로</button>
+    </div>
+  );
+}
+
+export default withRouter(WithRouterSample);
+```
+
+withRouter를 가져와 내보낼 때 컴포넌트를 감싸주면 어디서 사용하든지 세 가지 객체를 사용할 수 있습니다.
+
+### Profiles.js
+
+```js
+import React from "react";
+import Profile from "./Profile";
+import { Link, Route } from "react-router-dom";
+import WithRouterSample from "./WithRouterSample";
+
+function Profiles() {
+  return (
+    <div>
+      <h3>사용자 목록</h3>
+      <ul>
+        <li>
+          <Link to="/profiles/junjang">junjang</Link>
+        </li>
+        <li>
+          <Link to="/profiles/olaf">olaf</Link>
+        </li>
+      </ul>
+
+      <Route
+        path="/profiles"
+        exact
+        render={() => <div>사용자를 선택해주세요</div>}
+      />
+      <Route path="/profiles/:username" component={Profile} />
+      <WithRouterSample />
+    </div>
+  );
+}
+
+export default Profiles;
+```
+
+withRouter를 보내고 받은 컴포넌트 입니다.

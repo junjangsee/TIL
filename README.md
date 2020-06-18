@@ -159,7 +159,7 @@
 
 - [작업환경](https://github.com/junjangsee/TIL/blob/master/react/작업환경.md)
 - [컴포넌트](https://github.com/junjangsee/TIL/blob/master/react/컴포넌트.md)
-- [JSX](https://github.com/junjangsee/TIL/blob/master/react/JSX.md)
+- [JSX](https://github.com/junjangsee/TIL/blob/master/react/jsx.md)
 - [props](https://github.com/junjangsee/TIL/blob/master/react/props.md)
 - Hooks
   - [useState](https://github.com/junjangsee/TIL/blob/master/react/useState.md)
@@ -170,10 +170,11 @@
   - [useReducer](https://github.com/junjangsee/TIL/blob/master/react/useReducer.md)
 - [map](https://github.com/junjangsee/TIL/blob/master/react/map.md)
 - [Context API](https://github.com/junjangsee/TIL/blob/master/react/contextAPI.md)
+- [Route](https://github.com/junjangsee/TIL/blob/master/react/route.md)
 
 ## React Styling
 
-- [Sass](https://github.com/junjangsee/TIL/blob/master/react/Sass.md)
+- [Sass](https://github.com/junjangsee/TIL/blob/master/react/sass.md)
 - [Styled-Component](https://github.com/junjangsee/TIL/blob/master/react/styledComponent.md)
 
 ## Data Structure

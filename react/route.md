@@ -304,3 +304,79 @@ export default About;
 ```
 
 파싱한 query에 detail이 true인 조건을 가진 변수를 하나 만듭니다. 여기서 true가 **문자열인 이유**는 주소로 넘어오는 값은 무조건 문자열로 넘어오기 때문에 문자열로 비교해주어야 합니다.
+
+## 서브라우트
+
+라우트 내부에서 또 다른 라우트를 사용하는 것을 말합니다.
+
+### Profiles.js
+
+```js
+import React from "react";
+import Profile from "./Profile";
+import { Link, Route } from "react-router-dom";
+
+function Profiles() {
+  return (
+    <div>
+      <h3>사용자 목록</h3>
+      <ul>
+        <li>
+          <Link to="/profiles/junjang">junjang</Link>
+        </li>
+        <li>
+          <Link to="/profiles/olaf">olaf</Link>
+        </li>
+      </ul>
+
+      <Route
+        path="/profiles"
+        exact
+        render={() => <div>사용자를 선택해주세요</div>}
+      />
+      <Route path="/profiles/:username" component={Profile} />
+    </div>
+  );
+}
+
+export default Profiles;
+```
+
+먼저 컴포넌트에 이동할 주소를 Link를 통해 명시해줍니다. 그리고 클릭시 해당 주소로 가게 되는데 이 경로를 외부에서 컨트롤 하지 않고 내부에 Route를 통해 파라미터값을 가진 컴포넌트로 이동합니다.<br/>기존에 만들었던 Profile 컴포넌트를 Profiles 라는 컴포넌트 내부에서 선택시 보여질 수 있도록 합니다.
+
+### App.js
+
+```js
+import React from "react";
+import { Route, Link } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+import Profiles from "./Profiles";
+
+function App() {
+  return (
+    <div>
+      <ul>
+        <li>
+          <Link to="/">홈</Link>
+        </li>
+        <li>
+          <Link to="/about">소개</Link>
+        </li>
+        <li>
+          <Link to="/profiles">프로필 목록</Link>
+        </li>
+      </ul>
+      <hr />
+      <Route path="/" component={Home} exact />
+      <Route path="/about" component={About} />
+      <Route path="/profiles" component={Profiles} />
+    </div>
+  );
+}
+
+export default App;
+```
+
+프로필 목록을 추가해주고 목록을 보여주어야 할 컴포넌트를 Route에 선언합니다.<br/>
+서브라우트는 페이지 내에 탭을 다룰 때 주로 사용합니다.

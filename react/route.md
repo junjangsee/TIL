@@ -482,3 +482,109 @@ export default Profiles;
 ```
 
 withRouter를 보내고 받은 컴포넌트 입니다.
+
+## Switch
+
+여러 라우트 중 하나만 보여줄 때 사용합니다.
+
+### App.js
+
+```js
+import { Route, Link, Switch } from "react-router-dom";
+
+<Switch>
+  <Route path="/" component={Home} exact />
+  <Route path="/about" component={About} />
+  <Route path="/profiles" component={Profiles} />
+  <Route path="/history" component={HistorySample} />
+  <Route
+    render={({ location }) => (
+      <div>
+        <h2>이 페이지는 존재하지 않습니다.</h2>
+        <p>{location.pathname}</p>
+      </div>
+    )}
+  />
+</Switch>;
+```
+
+Switch를 사용하게 되면 첫 라우트부터 **순차적으로 매칭**을 해보는데 만약 만족되는 경로가 없다면 맨 마지막 라우트까지 와서 **아무런 경로가 없는** 라우트를 렌더링합니다.<br/>
+그래서 자주 사용되는 것은 **에러 페이지**를 나타낼 때 사용합니다.
+
+## NavLink
+
+현재 주소와 일치한다면 활성화된 속성값으로 바꾸어줍니다.
+
+### Profiles.js
+
+```js
+import React from "react";
+import Profile from "./Profile";
+import { NavLink, Route } from "react-router-dom";
+import WithRouterSample from "./WithRouterSample";
+
+function Profiles() {
+  return (
+    <div>
+      <h3>사용자 목록</h3>
+      <ul>
+        <li>
+          <NavLink
+            to="/profiles/junjang"
+            activeStyle={{ background: "black", color: "white" }}
+            activeClassName="active"
+          >
+            junjang
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/profiles/olaf"
+            activeStyle={{ background: "black", color: "white" }}
+          >
+            olaf
+          </NavLink>
+        </li>
+      </ul>
+
+      <Route
+        path="/profiles"
+        exact
+        render={() => <div>사용자를 선택해주세요</div>}
+      />
+      <Route path="/profiles/:username" component={Profile} />
+      <WithRouterSample />
+    </div>
+  );
+}
+
+export default Profiles;
+```
+
+NavLink로 해당 Link가 클릭되어 브라우저 주소와 일치된다면 active 속성들을 통해 스타일, 클래스네임 등을 추가할 수 있습니다.
+
+## useRouterHook
+
+location, history, match 객체를 보다 쉽게 사용할 수 있도록 해줍니다. 정식으로 채택된 것이 아니기 때문에 서드파티로 직접 설치하여 사용해야 합니다.
+
+### useRouterHook 설치하기
+
+```bash
+yarn add use-react-router
+```
+
+### useRouterHook 사용하기
+
+```js
+import useReactRouter from "use-react-router";
+
+function RouterHookSample() {
+  const { history, location, match } = useReactRouter();
+  console.log({ history, location, match });
+  return null;
+}
+
+export default RouterHookSample;
+```
+
+별다른 코드 없이 바로 사용할 수 있습니다.

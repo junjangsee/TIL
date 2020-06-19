@@ -2,7 +2,7 @@
 
 [![Blog](https://img.shields.io/badge/Blog-junjangsee.github.io-informational)](https://junjangsee.github.io/)
 
-## HTML
+## HTML5
 
 - [규격](https://github.com/junjangsee/TIL/blob/master/html/규격.md)
   - \<!DOCTYPE html>
@@ -141,7 +141,7 @@
 - [요소변형](https://github.com/junjangsee/TIL/blob/master/css/요소변형.md)
   - transform
 
-## JavaScript
+## JavaScript(자바스크립트)
 
 - [변수](https://github.com/junjangsee/TIL/blob/master/javascript/변수.md)
 - [객체](https://github.com/junjangsee/TIL/blob/master/javascript/객체.md)
@@ -155,7 +155,7 @@
 - [프로미스](https://github.com/junjangsee/TIL/blob/master/javascript/프로미스.md)
 - [Async - Await](https://github.com/junjangsee/TIL/blob/master/javascript/async-await.md)
 
-## React
+## React(리액트)
 
 - [작업환경](https://github.com/junjangsee/TIL/blob/master/react/작업환경.md)
 - [컴포넌트](https://github.com/junjangsee/TIL/blob/master/react/컴포넌트.md)
@@ -172,12 +172,16 @@
 - [Context API](https://github.com/junjangsee/TIL/blob/master/react/contextAPI.md)
 - [Route](https://github.com/junjangsee/TIL/blob/master/react/route.md)
 
-## React Styling
+## Redux(리덕스)
+
+- [Keywords](https://github.com/junjangsee/TIL/blob/master/redux/keyword.md)
+
+## React Styling(리액트 스타일링)
 
 - [Sass](https://github.com/junjangsee/TIL/blob/master/react/sass.md)
 - [Styled-Component](https://github.com/junjangsee/TIL/blob/master/react/styledComponent.md)
 
-## Data Structure
+## Data Structure(자료구조)
 
 - [Queue](https://github.com/junjangsee/TIL/blob/master/data-structure/queue.md)
 - [Stack](https://github.com/junjangsee/TIL/blob/master/data-structure/stack.md)

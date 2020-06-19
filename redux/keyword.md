@@ -34,17 +34,17 @@ type 값이 필수적으로 있어야합니다. 어떤 액션을 취할 때 어�
 액션을 만들어주는 함수입니다.
 
 ```js
-export funtion addTodo(data) {
-    return {
-        type: "ADD_TODO",
-        data
-    }
+export function addTodo(data) {
+  return {
+    type: "ADD_TODO",
+    data,
+  };
 }
 
-export const changeInput = text = ({
-    type: "CHANGE_INPUT",
-    text
-})
+export const changeInput = text => {
+  type: "CHANGE_INPUT",
+  text,
+};
 ```
 
 ### Reducer(리듀서)

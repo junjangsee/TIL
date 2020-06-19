@@ -154,10 +154,90 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
 ```
 
 react-redux에서 가져온 `Provider`로 App 컴포넌트를 감싸는데 이 때 기존에 만들었던 두개의 모듈을 합친 **스토어 하나를 생성**하여 props로 넣어줍니다.
+
+### 프리젠테이셔널 컴포넌트
+
+프리젠테이셔널 컴포넌트는 `UI`에 집중을 하는 컴포넌트입니다.
+
+```js
+import React from "react";
+
+function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
+  const onChange = (e) => {
+    onSetDiff(parseInt(e.target.value, 10));
+  };
+  return (
+    <div>
+      {number}
+      <div>
+        <input type="number" value={diff} onChange={onChange}></input>
+        <button onClick={onIncrease}>+</button>
+        <button onClick={onDecrease}>-</button>
+      </div>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+카운터 컴포넌트를 만들고 props로 상태 값들을 다 받아옵니다. input의 value는 **문자열**로 넘어오기 때문에 항상 **숫자**로 만들어주어야 합니다.
+
+### 컨테이너 컴포넌트
+
+프리젠테이셔널 컴포넌트와는 반대로 `상태관리`에만 집중을 하는 컴포넌트입니다.
+
+```js
+import React from "react";
+import Counter from "../components/Counter";
+// 상태를 조회하기 위해 사용
+import { useSelector, useDispatch } from "react-redux";
+import { increase, decrease, setDiff } from "../moduls/counter";
+
+function CounterContainer() {
+  const { number, diff } = useSelector((state) => ({
+    number: state.counter.number,
+    diff: state.counter.diff,
+  }));
+  const dispatch = useDispatch();
+
+  const onIncrease = () => dispatch(increase());
+  const onDecrease = () => dispatch(decrease());
+  const onSetDiff = (diff) => dispatch(setDiff(diff));
+
+  return (
+    <Counter
+      number={number}
+      diff={diff}
+      onIncrease={onIncrease}
+      onDecrease={onDecrease}
+      onSetDiff={onSetDiff}
+    />
+  );
+}
+
+export default CounterContainer;
+```
+
+`useSelector`를 이용하면 **store**에 있는 상태들을 가져와 조회를 할 수 있습니다. 그래서 조회한 데이터 두 가지를 가져왔습니다.<br/>
+`useDispatch`는 단순하게 dispatch를 사용할 수 있게 해주어 액션 생성 함수를 호출해 액션을 만들어줍니다.<br/>
+그리고 프리젠테이셔널 컴포넌트에 **useSelector**로 조회한 상태값과 **useDispatch**로 만들어낸 액션을 넘겨줍니다.
+
+### App.js
+
+```js
+import React from "react";
+import CounterContainer from "./containers/CounterContainer";
+
+function App() {
+  return <CounterContainer />;
+}
+
+export default App;
+```
+
+CounterContainer를 렌더링하여줍니다.

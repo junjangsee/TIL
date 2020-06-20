@@ -163,6 +163,8 @@ react-redux에서 가져온 `Provider`로 App 컴포넌트를 감싸는데 이 �
 
 프리젠테이셔널 컴포넌트는 `UI`에 집중을 하는 컴포넌트입니다.
 
+#### Counter.js
+
 ```js
 import React from "react";
 
@@ -187,9 +189,68 @@ export default Counter;
 
 카운터 컴포넌트를 만들고 props로 상태 값들을 다 받아옵니다. input의 value는 **문자열**로 넘어오기 때문에 항상 **숫자**로 만들어주어야 합니다.
 
+#### Todos.js
+
+```js
+import React, { useState } from "react";
+
+const TodoItem = React.memo(function TodoItem({ todo, onToggle }) {
+  return (
+    <li
+      style={{
+        textDecoration: todo.done ? "line-through" : "none",
+      }}
+      onClick={() => onToggle(todo.id)}
+    >
+      {todo.text}
+    </li>
+  );
+});
+
+const TodoList = React.memo(function TodoList({ todos, onToggle }) {
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} onToggle={onToggle} />
+      ))}
+    </ul>
+  );
+});
+
+function Todos({ todos, onCreate, onToggle }) {
+  const [text, setText] = useState("");
+  const onChange = (e) => setText(e.target.value);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    onCreate(text);
+    setText("");
+  };
+
+  return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          value={text}
+          onChange={onChange}
+          placeholder="할 일을 입력하세요"
+        />
+        <button type="submit">등록</button>
+        <TodoList todos={todos} onToggle={onToggle} />
+      </form>
+    </div>
+  );
+}
+
+export default React.memo(Todos);
+```
+
+간단한 예제이므로 따로 컴포넌트를 분리하지 않았고 React.memo로 최적화 하였습니다. 최종적으로 Todos 컴포넌트에서 투두리스트의 배열을 가져와 렌더링 합니다.
+
 ### 컨테이너 컴포넌트
 
 프리젠테이셔널 컴포넌트와는 반대로 `상태관리`에만 집중을 하는 컴포넌트입니다.
+
+#### CounterContainer.js
 
 ```js
 import React from "react";
@@ -227,17 +288,47 @@ export default CounterContainer;
 `useDispatch`는 단순하게 dispatch를 사용할 수 있게 해주어 액션 생성 함수를 호출해 액션을 만들어줍니다.<br/>
 그리고 프리젠테이셔널 컴포넌트에 **useSelector**로 조회한 상태값과 **useDispatch**로 만들어낸 액션을 넘겨줍니다.
 
+#### TodosContainer.js
+
+```js
+import React, { useCallback } from "react";
+import Todos from "../components/Todos";
+import { useSelector, useDispatch } from "react-redux";
+import { addTodo, toggleTodo } from "../moduls/todos";
+
+function TodosContainer() {
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+
+  const onCreate = useCallback((text) => dispatch(addTodo(text)), [dispatch]);
+  const onToggle = useCallback((id) => dispatch(toggleTodo(id)), [dispatch]);
+
+  return <Todos todos={todos} onCreate={onCreate} onToggle={onToggle} />;
+}
+
+export default TodosContainer;
+```
+
+todos 상태를 가져와서 액션 실행 함수를 useCallback으로 최적화 하여 객체를 만든 후 렌더링합니다.
+
 ### App.js
 
 ```js
 import React from "react";
 import CounterContainer from "./containers/CounterContainer";
+import TodosContainer from "./containers/TodosContainer";
 
 function App() {
-  return <CounterContainer />;
+  return (
+    <div>
+      <CounterContainer />
+      <hr />
+      <TodosContainer />
+    </div>
+  );
 }
 
 export default App;
 ```
 
-CounterContainer를 렌더링하여줍니다.
+CounterContainer, TodosContainer를 렌더링하여줍니다.

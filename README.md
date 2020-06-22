@@ -176,6 +176,7 @@
 
 - [Keywords](https://github.com/junjangsee/TIL/blob/master/redux/keyword.md)
 - [Module](https://github.com/junjangsee/TIL/blob/master/redux/module.md)
+- [Middleware](https://github.com/junjangsee/TIL/blob/master/redux/middleware.md)
 
 ## React Styling(리액트 스타일링)
 

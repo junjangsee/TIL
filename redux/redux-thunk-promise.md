@@ -191,3 +191,51 @@ export default rootReducer;
 ```
 
 store에서 사용할 리듀서를 내보냅니다.
+
+### 컴포넌트
+
+```js
+import React from "react";
+
+function PostList({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  );
+}
+
+export default PostList;
+```
+
+posts 배열을 받아와 그려주는 컴포넌트를 만듭니다.
+
+### 컨테이너
+
+```js
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getPosts } from "../modules/posts";
+import PostList from "../components/PostList";
+
+function PostListContainer() {
+  const { data, error, loading } = useSelector((state) => state.posts.posts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
+  if (loading) return <div>로딩중...</div>;
+  if (error) return <div>에러 발생!</div>;
+  if (!data) return null;
+
+  return <PostList posts={data} />;
+}
+
+export default PostListContainer;
+```
+
+게시글의 상태들을 가져와 최초 렌더링 될 때 모듈에서 API 호출한 함수를 가져와 렌더링 후 조건문을 다 통과하면 해당 데이터를 가져와 props로 넘겨줍니다.

@@ -125,7 +125,7 @@ export const reducerUtils = {
 
 위 코드들처럼 용도에 맞는 함수를 분리하였습니다.
 
-### 모듈
+### 유틸을 적용한 모듈
 
 ```js
 import * as postsAPI from "../api/posts";
@@ -192,7 +192,7 @@ export default rootReducer;
 
 store에서 사용할 리듀서를 내보냅니다.
 
-### 컴포넌트
+## 컴포넌트
 
 ```js
 import React from "react";
@@ -212,7 +212,7 @@ export default PostList;
 
 posts 배열을 받아와 그려주는 컴포넌트를 만듭니다.
 
-### 컨테이너
+## 컨테이너
 
 ```js
 import React, { useEffect } from "react";
@@ -239,3 +239,104 @@ export default PostListContainer;
 ```
 
 게시글의 상태들을 가져와 최초 렌더링 될 때 모듈에서 API 호출한 함수를 가져와 렌더링 후 조건문을 다 통과하면 해당 데이터를 가져와 props로 넘겨줍니다.
+
+## 라우터
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "./modules";
+import { composeWithDevTools } from "redux-devtools-extension";
+import logger from "redux-logger";
+import ReduxThunk from "redux-thunk";
+import { BrowserRouter } from "react-router-dom";
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(ReduxThunk, logger))
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+
+serviceWorker.unregister();
+```
+
+react-router-dom을 설치한 후 컴포넌트를 BrowserRouter로 감싸줍니다.
+
+### PostPage.js
+
+```js
+import React from "react";
+import PostContainer from "../containers/PostContainer";
+
+function PostPage({ match }) {
+  const { id } = match.params;
+  const postId = parseInt(id, 10);
+
+  return <PostContainer postId={postId} />;
+}
+
+export default PostPage;
+```
+
+파라미터를 가져오기 위해 페이지 컴포넌트를 만들어 match의 id값을 가져와 props로 전달합니다. 객체는 항상 문자열로 넘어오기 때문에 10진수로 바꾸어줍니다.
+
+### App.js
+
+```js
+import React from "react";
+import { Route } from "react-router-dom";
+import PostListContainer from "./containers/PostListContainer";
+import PostPage from "./pages/PostPage";
+
+function App() {
+  return (
+    <>
+      <Route path="/" component={PostListContainer} exact={true} />
+      <Route path="/:id" component={PostPage} />
+    </>
+  );
+}
+
+export default App;
+```
+
+### PostList.js
+
+```js
+import React from "react";
+import { Link } from "react-router-dom";
+
+function PostList({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>
+          <Link to={`/${post.id}`}>{post.title}</Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default PostList;
+```
+
+Link를 통해 Post별 id를 전달하여 렌더링 해줍니다.<br/>
+<br/>
+
+![thunk_router](../assets/gifs/thunk_router.gif)

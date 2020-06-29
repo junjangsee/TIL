@@ -151,8 +151,8 @@
 - [이벤트](https://github.com/junjangsee/TIL/blob/master/javascript/이벤트.md)
 - [조건문](https://github.com/junjangsee/TIL/blob/master/javascript/조건문.md)
 - [반복문](https://github.com/junjangsee/TIL/blob/master/javascript/반복문.md)
-- [클래스](https://github.com/junjangsee/TIL/blob/master/javascript/클래스.md)
-- [프로미스](https://github.com/junjangsee/TIL/blob/master/javascript/프로미스.md)
+- [Class](https://github.com/junjangsee/TIL/blob/master/javascript/class.md)
+- [Promise](https://github.com/junjangsee/TIL/blob/master/javascript/promise.md)
 - [Async - Await](https://github.com/junjangsee/TIL/blob/master/javascript/async-await.md)
 
 ## React(리액트)
@@ -185,6 +185,12 @@
 
 - [Sass](https://github.com/junjangsee/TIL/blob/master/react/sass.md)
 - [Styled-Component](https://github.com/junjangsee/TIL/blob/master/react/styledComponent.md)
+
+## TypeScript(타입스크립트)
+
+- [소개](https://github.com/junjangsee/TIL/blob/master/typescript/소개.md)
+- [컴파일러 설정](https://github.com/junjangsee/TIL/blob/master/typescript/컴파일러설정.md)
+- [변수](https://github.com/junjangsee/TIL/blob/master/typescript/변수.md)
 
 ## Data Structure(자료구조)
 

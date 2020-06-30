@@ -195,6 +195,7 @@
   - [기본타입](https://github.com/junjangsee/TIL/blob/master/typescript/기본타입.md)
   - [인터페이스](https://github.com/junjangsee/TIL/blob/master/typescript/인터페이스.md)
   - [함수형타입](https://github.com/junjangsee/TIL/blob/master/typescript/함수형타입.md)
+  - [enum](https://github.com/junjangsee/TIL/blob/master/typescript/enum.md)
 
 ## Data Structure(자료구조)
 

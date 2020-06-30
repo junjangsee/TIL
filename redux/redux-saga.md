@@ -95,19 +95,6 @@ export function* counterSaga() {
   yield takeLatest(DECREASE_ASYNC, decreaseSaga);
 }
 
-// // 1초 후
-// export const increaseAsync = () => (dispatch) => {
-//   setTimeout(() => {
-//     dispatch(increase());
-//   }, 1000);
-// };
-
-// export const decreaseAsync = () => (dispatch) => {
-//   setTimeout(() => {
-//     dispatch(decrease());
-//   }, 1000);
-// };
-
 // 초기 데이터
 const initialState = 0;
 

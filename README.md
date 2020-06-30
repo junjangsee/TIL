@@ -191,6 +191,9 @@
 - [소개](https://github.com/junjangsee/TIL/blob/master/typescript/소개.md)
 - [컴파일러 설정](https://github.com/junjangsee/TIL/blob/master/typescript/컴파일러설정.md)
 - [변수](https://github.com/junjangsee/TIL/blob/master/typescript/변수.md)
+- 타입
+  - [기본타입](https://github.com/junjangsee/TIL/blob/master/typescript/기본타입.md)
+  - [인터페이스](https://github.com/junjangsee/TIL/blob/master/typescript/인터페이스.md)
 
 ## Data Structure(자료구조)
 

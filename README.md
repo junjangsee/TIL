@@ -1,6 +1,6 @@
 # Today I Learned(TIL) Wiki
 
-[![Blog](https://img.shields.io/badge/Blog-junjangsee.github.io-informational)](https://junjangsee.github.io/)
+[![blog](https://img.shields.io/badge/Blog-junjangsee.tistory.com-informational)](https://junjangsee.tistory.com/)
 
 ## HTML5
 

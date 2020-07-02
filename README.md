@@ -201,6 +201,7 @@
 - [Intersection](https://github.com/junjangsee/TIL/blob/master/typescript/intersection.md)
 - [Union](https://github.com/junjangsee/TIL/blob/master/typescript/union.md)
 - [별칭](https://github.com/junjangsee/TIL/blob/master/typescript/별칭.md)
+- [인덱스](https://github.com/junjangsee/TIL/blob/master/typescript/인덱스타입.md)
 
 ## Data Structure(자료구조)
 

@@ -197,6 +197,7 @@
   - [함수형타입](https://github.com/junjangsee/TIL/blob/master/typescript/함수형타입.md)
   - [enum](https://github.com/junjangsee/TIL/blob/master/typescript/enum.md)
 - [클래스](https://github.com/junjangsee/TIL/blob/master/typescript/클래스.md)
+- [제네릭](https://github.com/junjangsee/TIL/blob/master/typescript/제네릭.md)
 
 ## Data Structure(자료구조)
 

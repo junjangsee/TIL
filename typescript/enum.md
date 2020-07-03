@@ -56,7 +56,7 @@ console.log(StarbucksGrade["GOLD"]);
 ```ts
 enum StarbucksGrade {
   WELCOME = 0,
-  DIAMOND = 3
+  DIAMOND = 3,
   GREEN = 1,
   GOLD = 2,
 }

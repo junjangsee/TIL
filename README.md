@@ -195,7 +195,7 @@
   - [기본타입](https://github.com/junjangsee/TIL/blob/master/typescript/기본타입.md)
   - [인터페이스](https://github.com/junjangsee/TIL/blob/master/typescript/인터페이스.md)
   - [함수형타입](https://github.com/junjangsee/TIL/blob/master/typescript/함수형타입.md)
-  - [num](https://github.com/junjangsee/TIL/blob/master/typescript/enum.md)
+  - [enum](https://github.com/junjangsee/TIL/blob/master/typescript/enum.md)
 - [클래스](https://github.com/junjangsee/TIL/blob/master/typescript/클래스.md)
 - [제네릭](https://github.com/junjangsee/TIL/blob/master/typescript/제네릭.md)
 - [Intersection](https://github.com/junjangsee/TIL/blob/master/typescript/intersection.md)

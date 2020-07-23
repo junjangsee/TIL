@@ -141,7 +141,13 @@
 - [요소변형](https://github.com/junjangsee/TIL/blob/master/css/요소변형.md)
   - transform
 
-## JavaScript(자바스크립트)
+## CSS Pattern
+
+### Navigation
+
+- [Dot](https://github.com/junjangsee/TIL/blob/master/css/patterns/navigation/dot/dot.md)
+
+## Javascript(자바스크립트)
 
 - [변수](https://github.com/junjangsee/TIL/blob/master/javascript/변수.md)
 - [객체](https://github.com/junjangsee/TIL/blob/master/javascript/객체.md)
@@ -186,7 +192,7 @@
 - [Sass](https://github.com/junjangsee/TIL/blob/master/react/sass.md)
 - [Styled-Component](https://github.com/junjangsee/TIL/blob/master/react/styledComponent.md)
 
-## TypeScript(타입스크립트)
+## Typescript(타입스크립트)
 
 - [소개](https://github.com/junjangsee/TIL/blob/master/typescript/소개.md)
 - [컴파일러 설정](https://github.com/junjangsee/TIL/blob/master/typescript/컴파일러설정.md)

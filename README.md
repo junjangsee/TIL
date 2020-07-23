@@ -146,6 +146,7 @@
 ### Navigation
 
 - [Dot](https://github.com/junjangsee/TIL/blob/master/css/patterns/navigation/dot/dot.md)
+- [Tab](https://github.com/junjangsee/TIL/blob/master/css/patterns/navigation/tab/tab.md)
 
 ## Javascript(자바스크립트)
 

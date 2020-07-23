@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+.wrap-box {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+
+  background-color: #fff;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 40px;
+}
+
+.tab {
+  position: relative;
+
+  padding: 10px 15px;
+
+  color: #151b26;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #1ede9e;
+  transition: width 300ms ease-out;
+}
+
+.tab:hover::after {
+  width: 100%;
+}

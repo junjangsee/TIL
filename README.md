@@ -150,6 +150,8 @@
 
 ## Javascript(자바스크립트)
 
+- [패턴](https://github.com/junjangsee/TIL/blob/master/javascript/pattern)
+  - [펼침연산자](https://github.com/junjangsee/TIL/blob/master/javascript/pattern/spread.md)
 - [변수](https://github.com/junjangsee/TIL/blob/master/javascript/변수.md)
 - [객체](https://github.com/junjangsee/TIL/blob/master/javascript/객체.md)
 - [함수](https://github.com/junjangsee/TIL/blob/master/javascript/함수.md)

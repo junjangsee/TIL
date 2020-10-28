@@ -1,0 +1,96 @@
+/* Reset CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
+button:focus {
+  outline: 0;
+}
+
+/* MainPage */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.container .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .main button {
+  padding: 3px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container .main button:active {
+  transform: scale(0.96);
+}
+
+/* Modal */
+.container .modal-wrapper {
+  display: none;
+}
+
+.container .modal-wrapper.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(51, 51, 51, 0.8);
+}
+
+.container .modal-wrapper.active .close-modal {
+  position: absolute;
+  top: 30px;
+  right: 25px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.container .modal-wrapper.active .close-modal .btn-close {
+  cursor: pointer;
+}
+
+.container .modal-wrapper.active .close-modal .btn-close .close-icon {
+  fill: #ffffff;
+}
+
+.container .modal-wrapper.active .modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  background-color: #fff;
+}

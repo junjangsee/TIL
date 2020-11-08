@@ -2,10 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Header({ location, history }) {
-  if (location.pathname === '/sign') {
-    return null;
-  }
-
   return (
     <header className='header'>
       <strong>Header</strong>

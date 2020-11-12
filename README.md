@@ -143,11 +143,10 @@
 
 ## CSS Pattern
 
-### Navigation
-
 - [Dot](https://github.com/junjangsee/TIL/blob/master/css/patterns/navigation/dot/dot.md)
 - [Tab](https://github.com/junjangsee/TIL/blob/master/css/patterns/navigation/tab/tab.md)
 - [Carousel](https://github.com/junjangsee/TIL/blob/master/css/patterns/carousel)
+- [Slider](https://github.com/junjangsee/TIL/blob/master/css/patterns/slider)
 
 ## Javascript(자바스크립트)
 
